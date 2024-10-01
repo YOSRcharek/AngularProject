@@ -9,6 +9,9 @@ import { HighlightDirective } from "./directive/highlight.directive";
 import { FilterPipe } from "./pipe/filter.pipe";
 import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
+import { AppRoutingModule } from './app-routing.module';
+import { NotFoundComponent } from './Components/not-found/not-found.component';
+import { ProductModule } from "./Features/product/product.module";
 
 
 
@@ -21,11 +24,14 @@ import { BrowserModule } from "@angular/platform-browser";
     HomeComponent,
     ListCategoriesComponent,
     FilterPipe,
-    HighlightDirective
+    HighlightDirective,
+    NotFoundComponent
   ],
   imports: [
     FormsModule,
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    ProductModule
   ],
   providers: [],
   bootstrap: [AppComponent]

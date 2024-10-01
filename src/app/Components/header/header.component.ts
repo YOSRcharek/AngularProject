@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  userRole: string = 'user'; 
+  userRole: string = 'admin'; 
 
   isAdmin(): boolean {
     return this.userRole === 'admin';
