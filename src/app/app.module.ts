@@ -13,6 +13,7 @@ import { ListCategoriesComponent } from './components/list-categories/list-categ
 import { FilterPipe } from './pipe/filter.pipe';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProductModule } from './features/product/product.module';
+import { FilterProductPipe } from './pipe/filter-product.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { ProductModule } from './features/product/product.module';
     FilterPipe,
     NotFoundComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule,ProductModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

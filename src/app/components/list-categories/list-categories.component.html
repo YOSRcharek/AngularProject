@@ -12,7 +12,7 @@
                 class="img-fluid h-50 w-75" (click)="afficheDescription(c.id)">
             <h3>{{c.title | uppercase}}</h3>
             <button class="btn btn-primary" *ngIf="c.available == true" [routerLink]="['/products/',c.id]">Voir produits</button>
-            <p *ngIf="c.available == false">Catégorie non disponible</p>
+            <p class="alert alert-danger" *ngIf="c.available == false">Catégorie non disponible</p>
            </div>
         </ng-container>
    
