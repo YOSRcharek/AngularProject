@@ -14,6 +14,7 @@ import { FilterPipe } from './pipe/filter.pipe';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProductModule } from './features/product/product.module';
 import { FilterProductPipe } from './pipe/filter-product.pipe';
+import { FormCategoryComponent } from './components/form-category/form-category.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FilterProductPipe } from './pipe/filter-product.pipe';
     ListCategoriesComponent,
     FilterPipe,
     NotFoundComponent,
+    FormCategoryComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

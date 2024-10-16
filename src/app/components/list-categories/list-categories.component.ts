@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Category } from '../../models/categorie';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-categories',
@@ -8,8 +9,9 @@ import { Category } from '../../models/categorie';
 })
 export class ListCategoriesComponent {
 
-  title: string = ''
-  
+  constructor(private router:Router){}
+  title: string = '';
+
   categories: Category[] = [
     {
       id: 1,
@@ -68,13 +70,19 @@ export class ListCategoriesComponent {
 
   afficheDescription(id: number) {
     //foreach : ES
-    this.categories.forEach(element => {
+    this.categories.forEach((element) => {
       if (element.id == id) {
-        alert(element.description)
+        alert(element.description);
       }
-    })
+    });
     //filter : ES
-    let category = this.categories.filter(element => element.id == id)[0]
-    alert(category.description)
+    let category = this.categories.filter((element) => element.id == id)[0];
+    alert(category.description);
+  }
+
+  toUpdate(c: Category) {
+    console.log(JSON.stringify(c));
+    this.router.navigate
+      (['/category/update/', JSON.stringify(c)]);
   }
 }

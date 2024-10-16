@@ -4,9 +4,12 @@ import { HomeComponent } from './components/home/home.component';
 import { CommonModule } from '@angular/common';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProductComponent } from './components/product/product.component';
+import { FormCategoryComponent } from './components/form-category/form-category.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: 'category/add', component: FormCategoryComponent },
+  { path: 'category/update/:objet', component: FormCategoryComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'products',
