@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
+import { Console } from 'console';
 import { Categorie } from 'src/app/models/categories';
-
 @Component({
   selector: 'app-list-categories',
   templateUrl: './list-categories.component.html',
@@ -9,7 +10,7 @@ import { Categorie } from 'src/app/models/categories';
 export class ListCategoriesComponent implements OnInit {
 category: any;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -25,23 +26,32 @@ category: any;
       category.title.toLowerCase().includes(this.titre.toLowerCase())
     );
   }
-  categories : Categorie[]=[
-  {"id":1,"title":"Grand électroménager",
-  "image":"assets/electro.jpg", "description":"Grand électroménager1 ",
-  "available":true},
-  {"id":2,"title":"Petit électroménager",
-  "image":"assets/electro.jpg", "description":"Grand électroménager2",
-  "available":true},
-  {"id":3,"title":"Produits informatiques",
-  "image":"assets/electro.jpg", "description":"Grand électroménager3",
-  "available":true},
-  {"id":4,"title":"Smart Phones", "image":"assets/electro.jpg",
-  "description":"Grand électroménager4", "available":true},
-  {"id":5,"title":"TV, images et son",
-  "image":"assets/electro.jpg", "description":"Grand électroménager5",
-  "available":true},
-  {"id":6,"title":"Produits voiture", "image":"assets/electro.jpg",
-  "description":"Grand électroménager6","available":false},
-]
-
+  categories : Categorie[] = [{"id":1,"title":"Grand électroménager",
+    "image":"assets/electro.jpg", "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    "available":true},
+    {"id":2,"title":"Petit électroménager",
+    "image":"assets/electro.jpg", "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    "available":true},
+    {"id":3,"title":"Produits informatiques",
+    "image":"assets/electro.jpg", "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    "available":true},
+    {"id":4,"title":"Smart Phones", "image":"assets/electro.jpg",
+    "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit.", "available":true},
+    {"id":5,"title":"TV, images et son",
+    "image":"assets/electro.jpg", "description":"",
+    "available":true},
+    {"id":6,"title":"Produits voiture", "image":"assets/electro.jpg",
+    "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit.","available":false},]
+    
+    afficheDescription(id:number){
+      this.categories.forEach(element => {
+        if (element.id == id) {
+          alert(element.description)
+        }
+      })
+    }
+    update(c:Categorie){
+    console.log(JSON.stringify(c))
+    this.router.navigate(['/category/update', JSON.stringify(c)]); 
+    }
 }

@@ -12,6 +12,8 @@
             <img [src]="category.image" [alt]="category.title" class="img-fluid h-50 w-75" (click)="Alerte(category.description)">
             <h3>{{ category.title |uppercase }}</h3>
             <button *ngIf="category.available" class="btn btn-primary" [routerLink]="['/products/',category.id]">Voir produits</button>
+            <button  class="btn btn-success" (click)="update(category)">Update</button>
+           
             <p *ngIf="!category.available" class="text-danger">Catégorie non disponible</p>
       </div >
       

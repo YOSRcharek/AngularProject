@@ -11,7 +11,7 @@ import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from './app-routing.module';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
-import { ProductModule } from "./Features/product/product.module";
+import { FormCategorieComponent } from './Components/form-categorie/form-categorie.component';
 
 
 
@@ -25,13 +25,14 @@ import { ProductModule } from "./Features/product/product.module";
     ListCategoriesComponent,
     FilterPipe,
     HighlightDirective,
-    NotFoundComponent
+    NotFoundComponent,
+    FormCategorieComponent,
+    
   ],
   imports: [
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    ProductModule
   ],
   providers: [],
   bootstrap: [AppComponent]
