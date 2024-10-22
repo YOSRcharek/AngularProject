@@ -9,10 +9,11 @@ import { FormCategorieComponent } from './Components/form-categorie/form-categor
 
 const routes:Routes=[
   { path: "home", component: HomeComponent },
-  {path:"", redirectTo:'/home', pathMatch: 'full'},
+  {path:"", redirectTo:'/home', pathMatch: 'full'},// pathMatch comparaison complete 
   {path:"products/:id",component:ProductsComponent},
   {path:"category/add",component:FormCategorieComponent},
   {path:"category/update/:obj",component:FormCategorieComponent},
+  
   { path:'products', loadChildren: () => 
     import ('./Features/product/product.module')
     .then((m) => m.ProductModule)
