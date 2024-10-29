@@ -13,7 +13,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { FormCategorieComponent } from './Components/form-categorie/form-categorie.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +25,7 @@ import { FormCategorieComponent } from './Components/form-categorie/form-categor
     HighlightDirective,
     NotFoundComponent,
     FormCategorieComponent,
+   
     
   ],
   imports: [
