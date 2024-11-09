@@ -1,0 +1,50 @@
+
+<h1>hellooooo</h1>
+<input class="form-control" [formControl]="search">
+
+<form [formGroup]="product">
+
+  <div class="nb-3">
+     <label> Name</label>
+     <input class="form-control" formControlName="Name">
+     <div *ngIf="name.invalid && (name.touched || name.dirty)">Name is required</div>
+  </div>
+  <div class="nb-3">
+    <label> Image</label>
+    <input class="form-control" formControlName="Image">
+ </div>
+ <div class="nb-3">
+    <label> description</label>
+    <input class="form-control" formControlName="description">
+ </div>
+ <div class="nb-3">
+    <label> price</label>
+    <input class="form-control" formControlName="price">
+ </div>
+ <div class="nb-3" formGroupName="brand">
+    <label> brand Name</label>
+    <input class="form-control" formControlName="Name">
+    <div *ngIf="brandName.invalid && (brandName.touched || brandName.dirty)">
+        <div *ngIf="brandName.errors!['required']">brand name is required</div>
+        <div *ngIf="brandName.errors!['minlength']">brand name must have at least 3 characters</div>
+    </div>
+    <label> brand Logo</label>
+    <input class="form-control" formControlName="Logo">
+ </div>
+ <div class="nb-3">
+    <label> promotion</label>
+    <input class="form-control" formControlName="promotion">
+ </div>
+ <div class="nb-3">
+    <label> quantity</label>
+    <input class="form-control" formControlName="quantity">
+ </div>
+ <div class="nb-3" formArrayName="tags">
+    <label> Tags</label>
+    <div *ngFor="let t of tags">
+        <input class="form-control" [formControl]="t">
+    </div>
+    <button (click)="addTags()">+</button>
+ </div>
+
+</form>

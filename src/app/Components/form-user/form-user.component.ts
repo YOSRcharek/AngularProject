@@ -25,11 +25,7 @@ export class FormUserComponent implements OnInit {
       }
     })
   }
-  onSubmit() {
-    if (this.user) {
-      console.log('Form data:', this.user);
-    }
-  }
+
   add(f: NgForm) {
 
     console.log(f);
