@@ -1,7 +1,8 @@
 
-<input class="form-control" [formControl]="search">
-
-<form [formGroup]="product">
+<!--<input class="form-control" [formControl]="search">-->
+<div class="container">
+    <div class="row">
+    <form [formGroup]="product">
     <div class="mb-3">
         <label>Name :</label>
         <input class="form-control" formControlName="name">
@@ -55,4 +56,7 @@
     <div class="mb-3">
         <input type="submit" class="btn btn-primary" value="Add product" (click)="submit()">
     </div>
-</form>
+</form>    
+    </div>
+</div>
+

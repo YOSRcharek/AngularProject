@@ -9,8 +9,11 @@ import { Router } from '@angular/router';
 })
 export class ListCategoriesComponent {
 
-  constructor(private router:Router){}
+  constructor(private router: Router) { }
+  
   title: string = '';
+
+  test: string = '10';
 
   categories: Category[] = [
     {
@@ -78,6 +81,14 @@ export class ListCategoriesComponent {
     //filter : ES
     let category = this.categories.filter((element) => element.id == id)[0];
     alert(category.description);
+  }
+
+  changeTest() {
+    this.test = '12';
+  }
+  DeleteCategory(event: any) {
+    console.log(event)
+    this.categories= this.categories.filter((c) => c.id != event);
   }
 
   toUpdate(c: Category) {
