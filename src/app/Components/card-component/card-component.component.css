@@ -1,0 +1,6 @@
+.product-image {
+    width: 100%; /* Pour s'adapter à la largeur du conteneur sans changer la taille de l'image */
+    height: auto; /* Conserver la hauteur proportionnelle de l'image */
+    max-height: 200px; /* Limite maximale sans distorsion */
+    object-fit: contain; /* Affiche l'image entière sans découpage */
+  }

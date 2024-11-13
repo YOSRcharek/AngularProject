@@ -17,56 +17,8 @@
 
   <div class="row">
     <div class="col-md-4 mb-4" *ngFor="let product of listProducts | filterProduct: search">
-      <div class="card shadow-sm h-100">
-        <img
-          [src]="product.image"
-          [alt]="product.name"
-          class="card-img-top product-image"
-        />
-        <div class="card-body">
-          <h5
-            class="card-title text-center text-primary"
-            [ngClass]="product.nb_likes >= 10 ? 'clignote' : ''"
-          >
-            {{ product.name }}
-          </h5>
-          <p class="card-text text-center text-success fw-bold">
-            {{ product.price | currency: 'TND':'symbol':'1.0-0' }}
-          </p>
-          <p class="card-text text-center">
-            <span class="badge bg-info text-dark me-2">Likes: {{ product.nb_likes }}</span>
-            <span class="badge bg-secondary">Quantité: {{ product.quantity }}</span>
-          </p>
-        </div>
-        <div
-          class="card-footer d-flex justify-content-between align-items-center"
-        >
-          <button
-            type="button"
-            class="btn btn-outline-primary w-50 me-1"
-            (click)="increment(product)"
-          >
-            Like
-          </button>
-          <button
-            *ngIf="product.quantity == 0; else elseBlock"
-            type="button"
-            class="btn btn-outline-danger w-50"
-            disabled
-          >
-            Out of Stock
-          </button>
-          <ng-template #elseBlock>
-            <button
-              type="button"
-              class="btn btn-outline-success w-50"
-              (click)="buy(product)"
-            >
-              Buy
-            </button>
-          </ng-template>
-        </div>
-      </div>
+      <app-card-component [data]="product" (buyEvent)="buy($event)" (incrementEvent)="increment($event)"></app-card-component>
+   
     </div>
   </div>
 </div>

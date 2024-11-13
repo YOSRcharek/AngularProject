@@ -34,10 +34,22 @@ import { __param } from 'tslib';
     this.listProducts = this.listProducts.filter((pr)=>pr.categoryId == this.id);
     
     }
-    increment (Product: Products){
-      Product.nb_likes++;
+    
+    increment(event: any) {
+      const productId = event; 
+      const product = this.listProducts.find((p) => p.id === productId);
+      
+      if (product) {
+        product.nb_likes++; 
+      } 
     }
-    buy (Product: Products){
-      Product.quantity--;
+    
+    buy(event: any) {
+      const productId = event; 
+      const product = this.listProducts.find((p) => p.id === productId);     
+      if (product && product.quantity > 0) {
+        product.quantity--; 
+      } 
     }
+    
     }

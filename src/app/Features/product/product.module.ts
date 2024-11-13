@@ -6,12 +6,14 @@ import { ProductsComponent } from 'src/app/Components/products/products.componen
 import { ProductRoutingModule } from './product-routing.module';
 import { FilterProductPipe } from 'src/app/pipe/filter-product.pipe';
 import { FormProductComponent } from '../../Components/form-product/form-product.component';
+import { CardComponentComponent } from '../../Components/card-component/card-component.component';
 
 @NgModule({
   declarations: [
     ProductsComponent,
     FilterProductPipe,
     FormProductComponent,
+    CardComponentComponent,
   ],
   imports: [
     CommonModule,

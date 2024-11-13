@@ -1,9 +1,41 @@
-/* Style général de la navbar */
+/* Styles pour la navbar */
 .navbar {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 10px 20px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s, backdrop-filter 0.3s;
   }
+  
+  /* La navbar reste fixe en haut */
+  .fixed-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+  }
+  
+  /* Arrière-plan flou et transparent */
+  .blur-background {
+    background-color: rgba(255, 255, 255, 0.1); /* Couleur de fond très transparente */
+    backdrop-filter: blur(10px); /* Flou de l'arrière-plan */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Légère ombre */
+  }
+  
+  /* Couleur de texte et autres effets selon le thème clair ou sombre */
+  .navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .navbar-light .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Changement de la couleur des liens lorsqu'ils sont survolés */
+  .navbar-nav .nav-link:hover {
+    color: #007bff;
+  }
+  
+  /* Pour éviter que le contenu de la page soit caché par la navbar */
+  body {
+    padding-top: 70px; /* Ajustez selon la hauteur de votre navbar */
+  }
+  
   
   /* Couleur de fond dynamique selon le thème */
   .navbar-dark {
@@ -18,12 +50,12 @@
   .navbar-brand {
     font-weight: bold;
     font-size: 1.5rem;
-    color: #ff5722;
+    color: #094d96;
     transition: color 0.3s ease;
   }
   
   .navbar-brand:hover {
-    color: #ff784e;
+    color: #1b72cf;
   }
   
   /* Effet sur les liens */
@@ -43,7 +75,7 @@
   
   .navbar-nav .nav-item .active {
     color: #fff;
-    background-color: #007bff;
+    background-color: #094d96;
     border-radius: 5px;
   }
   
