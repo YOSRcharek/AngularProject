@@ -10,3 +10,55 @@
         opacity: 0;
     }
 }
+/* Préserver la taille d'image */
+.product-image {
+    width: 100%; /* Pour s'adapter à la largeur du conteneur sans changer la taille de l'image */
+    height: auto; /* Conserver la hauteur proportionnelle de l'image */
+    max-height: 200px; /* Limite maximale sans distorsion */
+    object-fit: contain; /* Affiche l'image entière sans découpage */
+  }
+  
+  /* Animation clignotante pour les produits populaires */
+  .clignote {
+    animation: clignote 1s infinite alternate;
+  }
+  
+  @keyframes clignote {
+    from {
+      color: #007bff;
+    }
+    to {
+      color: #ff0000;
+    }
+  }
+  
+  /* Carte avec ombre et coins arrondis */
+  .card {
+    border: none;
+    border-radius: 10px;
+  }
+  
+  /* Ombre légère */
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-footer {
+    background-color: #f8f9fa;
+    border-top: none;
+  }
+  
+  /* Boutons sur une seule ligne */
+  .card-footer button {
+    height: 40px;
+  }
+  
+  /* Formulaire de recherche */
+  .form-control {
+    padding: 10px;
+  }
+  
+  .form-label {
+    margin-bottom: 10px;
+  }
+  

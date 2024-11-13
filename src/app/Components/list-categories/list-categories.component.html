@@ -1,20 +1,28 @@
 
-  <div class="container">
+<div class="container" style="margin-top:30px">
+  <div class="row">
     <h3 appHighlight>Survolez-moi pour voir la surbrillance !</h3>
-    <input type="text" [(ngModel)]="titre"  placeholder="rechercher"  class="form-control mb-3"/>
-    <div class="row">
-     
-     <div class="col-md-4" *ngFor="let category of categories | filter:titre"
-       style="margin-bottom: 20px;">
-    
-    <!--     <div *ngIf="!titre || category.title.toLowerCase().includes(titre.toLowerCase())" class="col-md-4" style="margin-bottom: 20px;" >--> 
-        <!--  <div class="col-md-4" *ngFor="let category of filterCateg" style="margin-bottom: 20px;">--> 
-            <img [src]="category.image" [alt]="category.title" class="img-fluid h-50 w-75" (click)="Alerte(category.description)">
-            <h3>{{ category.title |uppercase }}</h3>
-            <button *ngIf="category.available" class="btn btn-primary" [routerLink]="['/products/',category.id]">Voir produits</button>
-            <button  class="btn btn-success" (click)="update(category)">Update</button>
-           
-            <p *ngIf="!category.available" class="text-danger">Catégorie non disponible</p>
-      </div >
-      
+    <input
+      type="text"
+      id="search"
+      class="form-control rounded-pill shadow-sm"
+      name="filter"
+      placeholder="Rechercher un categorie ..."
+      [(ngModel)]="titre" #i
+    /><div>
+      <br/>
+    </div>
+      <button  class="form-control rounded-pill " (click)="changeTest()">changeTest</button>
+      <ng-container *ngFor="let c of categories | filter:titre">
+          <div class="col-md-4">
+      <!-- <div *ngIf="title.toLowerCase() == c.title.toLowerCase() || title == ''" class="col-md-4" style="margin-bottom: 20px;"> -->
+        <app-category [data]="c" [title]="test" (dataEmitter)="DeleteChild($event)"></app-category> 
+      </div>
+      </ng-container>
+
+      <div class="row">
+          <app-test #child></app-test>
+         {{child.test}}
+      </div>
+  </div>
 </div>

@@ -12,12 +12,12 @@ import { __param } from 'tslib';
    export class ProductsComponent  {
       id!:number;
       listProducts : Products[]=[
-        {"id":1, "name":"Refrigérateur LG Inox","image":"assets/electro.jpg","categoryId":1, "description":"","price":2800,"brand":"LG","promotion":0,"nb_likes":0,"quantity":10},
-        {"id":2, "name":"Refrigérateur Samsung Blanc","image":"assets/electro.jpg","categoryId":1, "description":"", "price":2400,"brand":"Samsung","promotion":0,"nb_likes":0,"quantity":10},
-        {"id":3, "name":"Lave vaisselle Beko", "image":"assets/electro.jpg", "categoryId":1, "description":"","price":1875,"brand":"BEKO", "promotion":0,"nb_likes":0,"quantity":10},
-        {"id":4, "name":"Oppo Smart Phone","image":"assets/electro.jpg","categoryId":4, "description":"", "price":1200,"brand":"OPPO","promotion":0,"nb_likes":0,"quantity":10},
-        {"id":5, "name":"Hachoir", "image":"assets/electro.jpg","categoryId":2, "description":"","price":120,"brand":"Moulinex", "promotion":0,"nb_likes":0,"quantity":10},
-        {"id":6, "name":"TV 50'' LG","image":"assets/electro.jpg","categoryId":5, "description":"", "price":1800,"brand":"LG","promotion":0,"nb_likes":0,"quantity":10},
+        {"id":1, "name":"Refrigérateur LG Inox","image":"assets/refr.jpg","categoryId":1, "description":"","price":2800,"brand":"LG","promotion":0,"nb_likes":0,"quantity":10},
+        {"id":2, "name":"Refrigérateur Samsung Blanc","image":"assets/ref.jpg","categoryId":1, "description":"", "price":2400,"brand":"Samsung","promotion":0,"nb_likes":0,"quantity":10},
+        {"id":3, "name":"Lave vaisselle Beko", "image":"assets/lave.jpg", "categoryId":1, "description":"","price":1875,"brand":"BEKO", "promotion":0,"nb_likes":0,"quantity":10},
+        {"id":4, "name":"Oppo Smart Phone","image":"assets/op.jpg","categoryId":4, "description":"", "price":1200,"brand":"OPPO","promotion":0,"nb_likes":0,"quantity":10},
+        {"id":5, "name":"Hachoir", "image":"assets/hach.jpg","categoryId":2, "description":"","price":120,"brand":"Moulinex", "promotion":0,"nb_likes":0,"quantity":10},
+        {"id":6, "name":"TV 50'' LG","image":"assets/tv.jpg","categoryId":5, "description":"", "price":1800,"brand":"LG","promotion":0,"nb_likes":0,"quantity":10},
       ]
     search:string="";
     

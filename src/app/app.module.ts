@@ -12,6 +12,8 @@ import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from './app-routing.module';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { FormCategorieComponent } from './Components/form-categorie/form-categorie.component';
+import { CategoryComponent } from './Components/category/category.component';
+import { TestComponent } from './Components/test/test.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { FormCategorieComponent } from './Components/form-categorie/form-categor
     HighlightDirective,
     NotFoundComponent,
     FormCategorieComponent,
+    CategoryComponent,
+
    
     
   ],
@@ -32,7 +36,8 @@ import { FormCategorieComponent } from './Components/form-categorie/form-categor
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-  ],
+    TestComponent
+],
   providers: [],
   bootstrap: [AppComponent]
 })

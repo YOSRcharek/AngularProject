@@ -1,0 +1,33 @@
+/* Style de la section principale */
+section {
+    padding: 40px 20px;
+    background-color: #f8f9fa; /* Couleur de fond claire */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  /* Titre de la section */
+  section h2 {
+    font-size: 2.2rem;
+    color: #343a40;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  /* Paragraphe */
+  section p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.5;
+  }
+  
+  /* Conteneur des catégories */
+  app-list-categories {
+    display: block;
+    margin-top: 20px;
+  }
+  

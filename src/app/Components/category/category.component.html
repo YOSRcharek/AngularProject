@@ -1,0 +1,21 @@
+ <!--     <div *ngIf="!titre || data.title.toLowerCase().includes(titre.toLowerCase())" class="col-md-4" style="margin-bottom: 20px;" >--> 
+        <!--  <div class="col-md-4" *ngFor="let category of filterCateg" style="margin-bottom: 20px;">--> 
+            <div class="card text-center my-3 p-3">
+                <img [src]="data.image" [alt]="data.title" class="img-fluid h-50 w-75 mx-auto mb-3 rounded">
+                <h3 class="text-lowercase text-black mb-2">{{ data.title }}</h3>
+              
+               
+                <div class="d-flex justify-content-center align-items-center">
+                  <button *ngIf="data.available" class="btn btn-primary me-2" [routerLink]="['/products/', data.id]">
+                    Voir produits
+                  </button>
+                  <button class="btn btn-success me-2">Update</button>
+                  <button class="btn btn-danger" (click)="DeleteChild()">Delete</button>
+                </div>
+              
+                
+                <p *ngIf="!data.available" class="text-danger mt-2">
+                  Catégorie non disponible
+                </p>
+              </div>
+              

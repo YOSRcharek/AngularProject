@@ -1,8 +1,7 @@
 
-<h1>hellooooo</h1>
 <input class="form-control" [formControl]="search">
 
-<form [formGroup]="product">
+<form [formGroup]="product" (ngSubmit)="submit()">
 
   <div class="nb-3">
      <label> Name</label>
@@ -46,5 +45,7 @@
     </div>
     <button (click)="addTags()">+</button>
  </div>
-
+<div class="mb-3"> 
+   <input type="submit" class="btn btn-primary" value="Add produit">
+</div>
 </form>
