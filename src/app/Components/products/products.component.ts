@@ -51,5 +51,13 @@ import { __param } from 'tslib';
         product.quantity--; 
       } 
     }
+    shortList: Products[] = [];  
+
+  addToShortlist(event: any) {
+    const idUser = 123;  
+    const productWithUser = { ...event, idUser }; 
+    this.shortList.push(productWithUser);  
+    console.log(this.shortList);
+  }
     
     }

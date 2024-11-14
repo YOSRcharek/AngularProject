@@ -12,6 +12,7 @@ export class CardComponentComponent {
 
   @Output() buyEvent = new EventEmitter<number>();
   @Output() incrementEvent = new EventEmitter<number>();
+  @Output() addToShortlistEvent = new EventEmitter<object>();
 
   buy() {
     this.buyEvent.emit(this.data.id); 
@@ -19,5 +20,8 @@ export class CardComponentComponent {
 
   increment() {
     this.incrementEvent.emit(this.data.id);  
+  }
+  addToShortlist() {
+    this.addToShortlistEvent.emit(this.data); 
   }
 }

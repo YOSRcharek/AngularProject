@@ -17,7 +17,7 @@
 
   <div class="row">
     <div class="col-md-4 mb-4" *ngFor="let product of listProducts | filterProduct: search">
-      <app-card-component [data]="product" (buyEvent)="buy($event)" (incrementEvent)="increment($event)"></app-card-component>
+      <app-card-component [data]="product" (buyEvent)="buy($event)" (incrementEvent)="increment($event)" (addToShortlistEvent)="addToShortlist($event)"></app-card-component>
    
     </div>
   </div>
