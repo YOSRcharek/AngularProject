@@ -11,28 +11,8 @@
             <h2>Aucun produit</h2>
         </div>
         <ng-container *ngFor="let p of listProducts | filterProduct:search">
-            <!-- <div *ngIf="title.toLowerCase() == c.title.toLowerCase() || title == ''" class="col-md-4" style="margin-bottom: 20px;"> -->
-            <div class="col-md-4" style="margin-bottom: 20px;">
-                <img [src]="p.image" [alt]="p.name" class="img-fluid h-50 w-75">
-                <h3 [ngClass]="p.nb_likes >= 10 ? 'cligonte' : ''">{{p.name}}</h3>
-                <h3>{{p.price}}</h3>
-                <h3>{{p.nb_likes}}</h3>
-                <h3>{{p.quantity}}</h3>
-                <div class="row">
-                <div class="col-6">
-                <button type="button" class="btn btn-outline-primary" (click)="increment(p)">
-                    Like</button>
-                </div>
-                <div class="col-6">
-                <button *ngIf="p.quantity == 0;else elseBlock" type="button" 
-                class="btn btn-outline-secondary" (click)="buy(p)" disabled>Buy</button>
-                <ng-template #elseBlock>
-                <button type="button" class="btn btn-outline-secondary" 
-                (click)="buy(p)">Buy</button>
-                </ng-template>
-            </div>
-                </div>
-            </div>
+         <app-card-component [data]="p" (buyEvent)="buy($event)" (incrementEvent)="increment($event)"></app-card-component>
+
         </ng-container>
 
     </div>

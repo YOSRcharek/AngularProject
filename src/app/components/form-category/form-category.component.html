@@ -1,36 +1,75 @@
 <div class="container">
     <div class="row">
-        <form #f="ngForm">
+      <form #f="ngForm">
         <div class="mb-3">
-            <label>Title : </label>
-            <input type="text" class="form-control" name="title" [(ngModel)]="category.title" required minlength="3" #title="ngModel">
-        Invalid : {{title.invalid}}<br>
-        Touched : {{title.touched}}<br>
-        Dirty : {{title.dirty}}<br>
-        Errors : {{title.errors | json}}
-        <div *ngIf="title.invalid && (title.touched || title.dirty)" class="alert alert-danger">
-            <div *ngIf="title.errors!['required']">Title is required !</div>
-            <div *ngIf="title.errors!['minlength']">Title must have at least 3 charachters</div>
+          <label for="title">Title:</label>
+          <input
+            type="text"
+            id="title"
+            class="form-control"
+            name="title"
+            [(ngModel)]="category.title"
+            required
+            minlength="3"
+            #title="ngModel"
+          />
+          <app-validation-msg
+            [control]="title"
+            [customMessages]="{
+              required: 'Title is required!',
+              minlength: 'Title must have at least 3 characters.'
+            }"
+          ></app-validation-msg>
         </div>
-        </div>
+  
         <div class="mb-3">
-            <label>Image :</label>
-            <input type="text" class="form-control" name="image" [(ngModel)]="category.image" required #image="ngModel">
-        <div *ngIf="image.invalid && (image.touched || image.dirty)" class="alert alert-danger">
-            Image is required !
+          <label for="image">Image:</label>
+          <input
+            type="text"
+            id="image"
+            class="form-control"
+            name="image"
+            [(ngModel)]="category.image"
+            required
+            #image="ngModel"
+          />
+          <app-validation-msg
+            [control]="image"
+            [customMessages]="{ required: 'Image is required!' }"
+          ></app-validation-msg>
         </div>
-        </div>
+  
         <div class="mb-3">
-            <label>Description :</label>
-            <input type="text" class="form-control" name="description" [(ngModel)]="category.description" required minlength="10" #description="ngModel">
-        <div *ngIf="description.invalid && (description.touched || description.dirty)" class="alert alert-danger">
-            <div *ngIf="description.errors!['required']">Description is required !</div>
-            <div *ngIf="description.errors!['minlength']">Description must have at least 10 charachters</div>
+          <label for="description">Description:</label>
+          <input
+            type="text"
+            id="description"
+            class="form-control"
+            name="description"
+            [(ngModel)]="category.description"
+            required
+            minlength="10"
+            #description="ngModel"
+          />
+          <app-validation-msg
+            [control]="description"
+            [customMessages]="{
+              required: 'Description is required!',
+              minlength: 'Description must have at least 10 characters.'
+            }"
+          ></app-validation-msg>
         </div>
-        </div>
+  
         <div class="mb-3">
-        <input type="submit" class="btn btn-primary" value="Submit" (click)="add(f,title)" [disabled]="f.invalid">
+          <input
+            type="submit"
+            class="btn btn-primary"
+            value="Submit"
+            (click)="add(f)"
+            [disabled]="f.invalid"
+          />
         </div>
-        </form>
+      </form>
     </div>
-</div>
+  </div>
+  

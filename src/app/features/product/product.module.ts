@@ -6,9 +6,12 @@ import { ProductComponent } from '../../components/product/product.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterProductPipe } from 'src/app/pipe/filter-product.pipe';
 import { FormProductComponent } from '../../components/form-product/form-product.component';
+import { CardComponentComponent } from 'src/app/components/card-component/card-component.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+
 
 @NgModule({
-  declarations: [ProductComponent, FilterProductPipe, FormProductComponent],
-  imports: [CommonModule, ProductRoutingModule, FormsModule,ReactiveFormsModule],
+  declarations: [ProductComponent, FilterProductPipe, FormProductComponent,CardComponentComponent],
+  imports: [CommonModule, ProductRoutingModule, FormsModule,ReactiveFormsModule,SharedModule],
 })
 export class ProductModule {}

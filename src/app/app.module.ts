@@ -17,6 +17,8 @@ import { FilterProductPipe } from './pipe/filter-product.pipe';
 import { FormCategoryComponent } from './components/form-category/form-category.component';
 import { TestComponent } from './components/test/test.component';
 import { CategoryComponent } from './components/category/category.component';
+import { ValidationMsgComponent } from './components/validation-msg/validation-msg.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { CategoryComponent } from './components/category/category.component';
     FormCategoryComponent,
     CategoryComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule,TestComponent],
+  imports: [BrowserModule, AppRoutingModule, FormsModule,TestComponent,SharedModule],
   providers: [],
   bootstrap: [AppComponent],
 })

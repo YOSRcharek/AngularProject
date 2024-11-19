@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/models/categorie';
 
@@ -10,6 +11,7 @@ import { Category } from 'src/app/models/categorie';
 export class FormCategoryComponent implements OnInit {
   constructor(private activated:ActivatedRoute){}
   category!: Category;
+ 
   ngOnInit(): void {
     this.category = new Category();
     this.activated.params.subscribe({
@@ -23,11 +25,18 @@ export class FormCategoryComponent implements OnInit {
     }  
     );
   }
-
-  add(f: any, title: any) {
+  /*add(f: any, title: any) {
     this.category.available = true;
     console.log(this.category);
     console.log(f);
     console.log(title)
   }
+ */
+  add(form: NgForm) {
+    if (form.valid) {
+      console.log('Category added:', this.category);
+      // Ajoutez ici la logique pour traiter les données (enregistrement ou API).
+    }
+  }
+  
 }

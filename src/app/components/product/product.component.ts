@@ -108,11 +108,17 @@ export class ProductComponent implements OnInit , OnDestroy {
     );
   }
 
-  increment(Product: Product) {
-    Product.nb_likes++;
+  increment(event: any) {
+    const product = this.listProducts.find(p => p.id === event.id);
+    if (product) {
+      product.nb_likes++;
+    }
   }
 
-  buy(Product: Product) {
-    Product.quantity--;
+  buy(event:any) {
+    const product = this.listProducts.find(p => p.id === event.id);
+    if (product) {
+      product.quantity--;
+    }
   }
 }

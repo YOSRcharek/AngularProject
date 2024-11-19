@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { Category } from '../../models/categorie';
 import { Router } from '@angular/router';
+import { TestComponent } from '../test/test.component';
+import { CategoryComponent } from '../category/category.component';
 
 @Component({
   selector: 'app-list-categories',
@@ -10,7 +12,18 @@ import { Router } from '@angular/router';
 export class ListCategoriesComponent {
 
   constructor(private router: Router) { }
+  @ViewChild('child') testComponent!:TestComponent;
+  @ViewChild('i') input!:HTMLInputElement;
+  @ViewChildren(CategoryComponent)children!:QueryList<CategoryComponent>;
   
+  ngAfterViewInit():void
+  {
+    this.testComponent.start();
+    console.log(this.testComponent.test)
+    console.log(this.input)
+    this.children.forEach((e)=> console.log(e));
+    
+  }
   title: string = '';
 
   test: string = '10';
