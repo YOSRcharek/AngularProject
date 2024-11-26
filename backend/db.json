@@ -1,0 +1,12 @@
+{
+  "product": [],
+  "category": [
+    {
+    "id":1,
+    "title":"Grand électroménager",
+    "image":"assets/1.png", 
+    "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    "available":true
+    }
+  ]
+}

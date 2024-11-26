@@ -2,6 +2,7 @@
    import { Component, OnInit } from '@angular/core';
    import { ActivatedRoute } from '@angular/router';
 import { Products } from 'src/app/models/products';
+import { CategoryserviceService } from 'src/app/services/categoryservice.service';
 import { __param } from 'tslib';
 
    @Component({
@@ -9,20 +10,16 @@ import { __param } from 'tslib';
      templateUrl: './products.component.html',
      styleUrls: ['./products.component.css']
    })
-   export class ProductsComponent  {
+   export class ProductsComponent implements OnInit {
       id!:number;
-      listProducts : Products[]=[
-        {"id":1, "name":"Refrigérateur LG Inox","image":"assets/refr.jpg","categoryId":1, "description":"","price":2800,"brand":"LG","promotion":0,"nb_likes":0,"quantity":10},
-        {"id":2, "name":"Refrigérateur Samsung Blanc","image":"assets/ref.jpg","categoryId":1, "description":"", "price":2400,"brand":"Samsung","promotion":0,"nb_likes":0,"quantity":10},
-        {"id":3, "name":"Lave vaisselle Beko", "image":"assets/lave.jpg", "categoryId":1, "description":"","price":1875,"brand":"BEKO", "promotion":0,"nb_likes":0,"quantity":10},
-        {"id":4, "name":"Oppo Smart Phone","image":"assets/op.jpg","categoryId":4, "description":"", "price":1200,"brand":"OPPO","promotion":0,"nb_likes":0,"quantity":10},
-        {"id":5, "name":"Hachoir", "image":"assets/hach.jpg","categoryId":2, "description":"","price":120,"brand":"Moulinex", "promotion":0,"nb_likes":0,"quantity":10},
-        {"id":6, "name":"TV 50'' LG","image":"assets/tv.jpg","categoryId":5, "description":"", "price":1800,"brand":"LG","promotion":0,"nb_likes":0,"quantity":10},
-      ]
-    search:string="";
     
-    constructor(private activated:ActivatedRoute) {
-      
+    search:string="";
+    ngOnInit(): void {
+      throw new Error('Method not implemented.');
+      this.listProducts=this.categoryService.getProduits();
+    }
+    constructor(private activated:ActivatedRoute,private categoryService:CategoryserviceService) {
+
     this.id = this.activated.snapshot.params['id'];
     console.log('snapshot method :')
     console.log(this.activated.snapshot.params['id']);
@@ -31,9 +28,10 @@ import { __param } from 'tslib';
     this.activated.params.subscribe({
       next : (param)=>console.log(param['id'])
     })
-    this.listProducts = this.listProducts.filter((pr)=>pr.categoryId == this.id);
     
+    this.listProducts = this.listProducts.filter((pr)=>pr.categoryId == this.id);
     }
+    
     
     increment(event: any) {
       const productId = event; 
@@ -59,5 +57,5 @@ import { __param } from 'tslib';
     this.shortList.push(productWithUser);  
     console.log(this.shortList);
   }
-    
+    listProducts : Products[]=[];
     }
